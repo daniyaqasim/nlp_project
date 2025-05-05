@@ -1,0 +1,57 @@
+ 🗣️ Story2Audio: Roman Urdu Story Narration using gRPC + Coqui TTS
+
+This project converts  English story text into natural-sounding audio using a local gRPC server and [Coqui TTS](https://github.com/coqui-ai/TTS). It includes a Gradio-based frontend for easy interaction and a Postman-compatible backend for API testing.
+
+
+📁 Project Structure
+story2audio/
+├── app.py # Gradio frontend (client)
+├── server.py # gRPC server using Coqui TTS
+├── story2audio.proto # gRPC protocol definition
+├── story2audio_pb2.py # Generated gRPC Python code
+├── story2audio_pb2_grpc.py # Generated gRPC Python code
+├── Dockerfile  
+├── my_voice.mp3 # (Optional) Custom speaker voice file
+├── output_*.wav # Generated audio files (saved temporarily)
+└── README.md # This documentation
+
+manually install:
+pip install gradio grpcio grpcio-tools TTS requests
+
+Generate gRPC Python Files:
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. story2audio.proto
+
+ Run the gRPC + HTTP Server:
+python server.py
+
+This starts:
+gRPC server on port 5001
+Local HTTP server on port 5000 to serve audio files
+python app.py
+Visit: http://127.0.0.1:7860
+Enter your story → Get back audio → Play or download
+
+Usage Instructions:
+Enter a story in  English in the Gradio textbox.
+
+Click “Submit”.
+
+Audio will be generated and streamed from the backend.
+
+You can also test via Postman .
+Performance Evaluation
+You can measure:
+
+Number of concurrent requests handled (via gRPC thread pool)
+
+Audio generation time (typically ~2–4s)
+
+Frontend response delay
+(testcases added in test_server.py)
+
+Known Limitations:
+Monotone voice: The default model isn't expressive; use expressive multi-speaker models for improvements.
+
+Roman Urdu pronunciation: Some words mispronounced. Fine-tuning or phoneme-level control required.
+
+No speaker embedding yet: Currently not using a custom speaker.

@@ -1,0 +1,190 @@
+{
+  "info": {
+    "name": "gRPC Story2Audio Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "grpc-story2audio-collection",
+    "description": "gRPC collection to test Story2Audio service with multiple cases."
+  },
+  "item": [
+    {
+      "name": "Single Valid Request",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "Once upon a time in a land far..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Empty Input Request",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": ""
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Concurrent Request 1",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "She opened the door to find..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Concurrent Request 2",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "The wind howled as it passed..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Concurrent Request 3",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "Once upon a time, a king..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Concurrent Request 4",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "A dark shadow loomed over the ..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Concurrent Request 5",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "The sun rose, signaling a new ..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Performance Test",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "Once upon a time in a distant land, there was a very long and elaborate story that continued for many pages and scenes..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Edge Case: Non-ASCII Characters",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": "Once upon a time... 🏰👑✨..."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Edge Case: Empty Story",
+      "request": {
+        "method": "GRPC",
+        "url": "grpc://localhost:5001",
+        "body": {
+          "mode": "grpc",
+          "grpc": {
+            "proto": "C:\\Users\\hp\\story2audio\\story2audio.proto",
+            "service": "Story2Audio",
+            "method": "GenerateAudio",
+            "request": {
+              "story": ""
+            }
+          }
+        }
+      }
+    }
+  ]
+}
