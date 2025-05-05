@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service Story2Audio {
+  rpc GenerateAudio (StoryRequest) returns (AudioResponse);
+}
+
+message StoryRequest {
+  string story_text = 1;
+}
+
+message AudioResponse {
+  string status = 1;
+  string message = 2;
+  string audio_url = 3;
+}
